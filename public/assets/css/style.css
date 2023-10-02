@@ -238,7 +238,7 @@ h6 {
   padding: 20px 0 15px 0;
   font-size: 18px;
   font-weight: 500;
-  color: #FFFFFF;
+  color: #000000;
   font-family: "Poppins", sans-serif;
 }
 
@@ -350,7 +350,7 @@ h6 {
 .nav-tabs-bordered .nav-link.active {
   background-color: #fff;
   color: #4154f1;
-  border-bottom: 2px solid #4154f1;
+  border-bottom: 2px solid #f1ab41;
 }
 
 /*--------------------------------------------------------------
@@ -1223,7 +1223,7 @@ h6 {
   padding: 20px 0;
   font-size: 14px;
   transition: all 0.3s;
-  border-top: 1px solid #cddfff;
+  border-top: 1px solid #F8981E;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -1240,4 +1240,56 @@ h6 {
   text-align: center;
   font-size: 13px;
   color: #FFFFFF;
+}
+
+
+/*--------------------------------------------------------------
+# Custom Code
+--------------------------------------------------------------*/
+
+.col-12 {
+  width: 100%;
+}
+
+.start-btn {
+  background-color: #F8981E;
+  border-color: #F8981E;
+  color: rgb(0, 0, 0);
+  width: 10%;
+  border-radius: 12px; /* Rounded corners */
+  padding: 10px 24px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  transition: all 0.5s; /* Add transition effect */
+  cursor: pointer; /* Add a pointer cursor on hover */
+}
+
+.start-btn:hover {
+  background-color: #D6800C;
+  border-color: #D6800C;
+  color: #000000;
+}
+
+.start-btn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.start-btn span:after {
+  content: '»'; /* Add content to the pseudo-element ::after */
+  position: absolute;
+  opacity: 0; 
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.start-btn:hover span {
+  padding-right: 25px;
+}
+
+.start-btn:hover span:after {
+  opacity: 1;
+  right: 0;
 }

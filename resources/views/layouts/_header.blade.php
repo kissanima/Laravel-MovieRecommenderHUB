@@ -2,7 +2,7 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
 
   <div class="d-flex align-items-center justify-content-between">
-    <a href="index.html" class="logo d-flex align-items-center">
+    <a href="{{ route('home') }}" class="logo d-flex align-items-center">
       <img src="assets/img/logo.png" alt="">
       <span class="d-none d-lg-block">
         <span style="color: white;">MovieRecommender</span>
@@ -51,7 +51,7 @@
           </li>
 
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="{{ route('profile') }}">
+            <a class="dropdown-item d-flex align-items-center" href="">
               <i class="bi bi-person"></i>
               <span>My Profile</span>
             </a>
@@ -61,7 +61,7 @@
           </li>
 
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="{{ route('account-settings') }}">
+            <a class="dropdown-item d-flex align-items-center" href="">
               <i class="bi bi-gear"></i>
               <span>Account Settings</span>
             </a>
@@ -71,7 +71,7 @@
           </li>
 
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="{{ route('faq') }}">
+            <a class="dropdown-item d-flex align-items-center" href="">
               <i class="bi bi-question-circle"></i>
               <span>Need Help?</span>
             </a>
@@ -81,11 +81,11 @@
           </li>
 
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <a class="dropdown-item d-flex align-items-center" href="{{ route('auth_signout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
               <i class="bi bi-box-arrow-right"></i>
               <span>Sign Out</span>
             </a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            <form id="logout-form" action="{{ route('auth_signout') }}" method="POST" class="d-none">
               @csrf
             </form>
           </li>
@@ -110,7 +110,7 @@
           </li>
 
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="{{ route('login') }}">
+            <a class="dropdown-item d-flex align-items-center" href="{{ route('signin') }}">
               <i class="bi bi-box-arrow-in-right"></i>
               <span>Sign In</span>
             </a>
@@ -119,7 +119,7 @@
             <hr class="dropdown-divider">
           </li>
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="{{ route('register') }}">
+            <a class="dropdown-item d-flex align-items-center" href="{{ route('signup') }}">
               <i class="bi bi-person-plus"></i>
               <span>Create Account</span>
             </a>

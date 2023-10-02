@@ -55,7 +55,7 @@
                         <button class="btn btn-primary w-100" type="submit">Login</button>
                     </div>
                     <div class="col-12">
-                        <p class="small mb-0">Don't have an account? <a href="{{ url('register') }}">Create an account</a></p>
+                        <p class="small mb-0">Don't have an account? <a href="{{ route('signup') }}">Create an account</a></p>
                     </div>
                 </form>
                 
@@ -63,13 +63,7 @@
                 </div>
               </div>
 
-              <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-                Designed by <a href="https://www.facebook.com/UserAd18">Userad18</a>
-              </div>
+              
 
             </div>
           </div>

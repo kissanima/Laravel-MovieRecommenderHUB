@@ -1,2 +1,2 @@
-# movie-recommendation
- 
+# MovieRecommenderHUB
+ A laravel movie recommender project with AI

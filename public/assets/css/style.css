@@ -17,6 +17,11 @@ body {
   font-family: "Open Sans", sans-serif;
   background: #000000;
   color: #FFFFFF;
+
+  /* Custom */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 100% of the viewport height */
 }
 
 a {
@@ -42,7 +47,7 @@ h6 {
 # Main
 --------------------------------------------------------------*/
 #main {
-  
+  margin-top: 60px;
   padding: 20px 30px;
   transition: all 0.3s;
 }
@@ -77,7 +82,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 99999;
-  background: #4154f1;
+  background: #D6800C;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -91,7 +96,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #6776f4;
+  background: #FF5733;
   color: #fff;
 }
 
@@ -616,7 +621,7 @@ h6 {
   scrollbar-width: thin;
   scrollbar-color: #aab7cf transparent;
   box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
-  background-color: #fff;
+  background-color: #0e0e0e;
 }
 
 @media (max-width: 1199px) {
@@ -690,9 +695,9 @@ h6 {
   align-items: center;
   font-size: 15px;
   font-weight: 600;
-  color: #4154f1;
+  color: #6d6d64;
   transition: 0.3;
-  background: #f6f9ff;
+  background: #151515;
   padding: 10px 15px;
   border-radius: 4px;
 }
@@ -700,12 +705,12 @@ h6 {
 .sidebar-nav .nav-link i {
   font-size: 16px;
   margin-right: 10px;
-  color: #4154f1;
+  color: #ffffff;
 }
 
-.sidebar-nav .nav-link.collapsed {
-  color: #FFFFFF;
-  background: #fff;
+.sidebar-nav .nav-link.collapsed { /* TODO: */
+  color: #6d6d64;
+  background: #151515;
 }
 
 .sidebar-nav .nav-link.collapsed i {
@@ -713,12 +718,12 @@ h6 {
 }
 
 .sidebar-nav .nav-link:hover {
-  color: #4154f1;
-  background: #f6f9ff;
+  color: #F8981E;
+  background: #1b1d1e;
 }
 
-.sidebar-nav .nav-link:hover i {
-  color: #4154f1;
+.sidebar-nav .nav-link:hover i { /* icon */
+  color: #F8981E;
 }
 
 .sidebar-nav .nav-link .bi-chevron-down {
@@ -1224,9 +1229,7 @@ h6 {
   font-size: 14px;
   transition: all 0.3s;
   border-top: 1px solid #F8981E;
-  position: fixed;
   bottom: 0;
-  width: 100%;
   color: #FFFFFF; /* Change to your preferred text color */
 }
 
@@ -1293,3 +1296,45 @@ h6 {
   opacity: 1;
   right: 0;
 }
+
+
+
+/* MOVIE BLOCK */
+.movie-card {
+        position: relative;
+        width: 300px;
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        overflow: hidden;
+        cursor: pointer;
+        margin: 10px;
+    }
+
+    .movie-card img {
+        max-width: 100%;
+        height: auto;
+        transition: transform 0.3s;
+    }
+
+    .movie-card .movie-description {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 10px;
+        position: absolute;
+        bottom: -100%; /* Initially hidden */
+        left: 0;
+        width: 100%;
+        transition: bottom 0.3s;
+    }
+
+    .movie-card:hover .movie-description {
+        bottom: 0; /* Slide up from the bottom on hover */
+    }
+
+    .movie-row {
+        display: flex;
+        flex-wrap: nowrap; /* Prevent wrapping to the next line */
+    }

@@ -36,6 +36,9 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+
+    
 </head>
 
 <body>
@@ -43,6 +46,7 @@
     @include('layouts._header')
 
     @yield('content')
+    @include('layouts._sidebar')
 
     @include('layouts._footer')
 

@@ -76,27 +76,80 @@
 
 
   <script>
-    // JavaScript to handle button clicks and form display
-    document.addEventListener("DOMContentLoaded", function () {
-      const questionContainer = document.getElementById("question-container");
-      const responseForm = document.getElementById("response-form");
-  
-      const happyButton = document.getElementById("happy-button");
-      const neutralButton = document.getElementById("neutral-button");
-      const sadButton = document.getElementById("sad-button");
-  
-      // Function to show the response form
-      function showResponseForm() {
-        questionContainer.style.display = "none";
-        responseForm.style.display = "block";
-      }
-  
-      // Event listeners for button clicks
-      happyButton.addEventListener("click", showResponseForm);
-      neutralButton.addEventListener("click", showResponseForm);
-      sadButton.addEventListener("click", showResponseForm);
+    document.addEventListener('DOMContentLoaded', function () {
+      const questionContainer = document.getElementById('question-container');
+      const occasionContainer = document.getElementById('occasion-container');
+      const genreContainer = document.getElementById('genre-container');
+      const ageContainer = document.getElementById('age-container');
+      const recommendationContainer = document.getElementById('recommendation-container');
+    
+      const hideContainers = () => {
+        [questionContainer, occasionContainer, genreContainer, ageContainer, recommendationContainer]
+          .forEach(container => container.style.display = 'none');
+      };
+    
+      const showContainer = (container) => {
+        hideContainers();
+        container.style.display = 'block';
+      };
+    
+      const clearAndDisplayRecommendations = async (response) => {
+        recommendationContainer.innerHTML = '';
+    
+        try {
+          const recommendations = await response.json();
+    
+          recommendations.forEach(movie => {
+            const movieCard = document.createElement('div');
+            movieCard.textContent = movie.title; // Customize this based on your movie object structure
+            recommendationContainer.appendChild(movieCard);
+          });
+    
+          recommendationContainer.style.display = 'block';
+        } catch (error) {
+          console.error('Error parsing JSON:', error);
+        }
+      };
+    
+      const addClickListenerToShowContainer = (button, container) => {
+        button.addEventListener('click', () => showContainer(container));
+      };
+    
+      const addClickListenerToShowRecommendations = (button, genre, age) => {
+        button.addEventListener('click', async () => {
+          const response = await fetch(`/recommendations?genre=${genre}&age=${age}`);
+          clearAndDisplayRecommendations(response);
+        });
+      };
+    
+      // Attach event listeners
+      addClickListenerToShowContainer(document.getElementById('happy-button'), occasionContainer);
+      addClickListenerToShowContainer(document.getElementById('neutral-button'), occasionContainer);
+      addClickListenerToShowContainer(document.getElementById('sad-button'), occasionContainer);
+    
+      addClickListenerToShowContainer(document.getElementById('occasion-alone'), genreContainer);
+      addClickListenerToShowContainer(document.getElementById('occasion-date'), genreContainer);
+      addClickListenerToShowContainer(document.getElementById('occasion-friends'), genreContainer);
+      addClickListenerToShowContainer(document.getElementById('occasion-partner'), genreContainer);
+      addClickListenerToShowContainer(document.getElementById('occasion-family'), genreContainer);
+    
+      addClickListenerToShowContainer(document.getElementById('genre-action'), ageContainer);
+      addClickListenerToShowContainer(document.getElementById('genre-comedy'), ageContainer);
+      addClickListenerToShowContainer(document.getElementById('genre-romantic'), ageContainer);
+    
+      addClickListenerToShowRecommendations(document.getElementById('genre-all'), 'all', 'any');
+    
+      addClickListenerToShowRecommendations(document.getElementById('age-any'), 'all', 'any');
+      addClickListenerToShowRecommendations(document.getElementById('age-3'), 'all', '3');
+      addClickListenerToShowRecommendations(document.getElementById('age-5'), 'all', '5');
+      addClickListenerToShowRecommendations(document.getElementById('age-10'), 'all', '10');
+      addClickListenerToShowRecommendations(document.getElementById('age-20'), 'all', '20');
     });
-  </script>
+    </script>
+    
+  
+  
+  
 
 <style>
     /* Add this CSS to center the elements and adjust the top margin */

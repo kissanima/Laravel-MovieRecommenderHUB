@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MovieRecommendationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,6 @@ Route::post('home', [AuthController::class, 'auth_signout'])->name('auth_signout
 
 Route::get('/signup', [AuthController::class, 'signup'])->name('signup');
 Route::post('/signup', [AuthController::class, 'auth_signup'])->name('auth_signup');
+
+Route::get('/recommendations', [MovieRecommendationController::class, 'getRecommendations']);
+

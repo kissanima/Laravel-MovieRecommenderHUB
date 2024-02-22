@@ -30,7 +30,7 @@
                     @include('layouts._message')
                   <form class="row g-3 needs-validation" action="" method="post">
 
-                    {{ csrf_field() }} <!-- Add CSRF token for Laravel -->
+                    {{ csrf_field() }}
                 
                     <div class="col-12">
                       <label for="yourEmail" class="form-label">Your Email</label>

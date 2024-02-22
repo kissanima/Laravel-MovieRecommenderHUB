@@ -1,4 +1,4 @@
-<!-- ======= Header ======= -->
+
 <header id="header" class="header fixed-top d-flex align-items-center">
 
   <div class="d-flex align-items-center justify-content-between">
@@ -10,7 +10,7 @@
       </span>
     </a>
     <i class="bi bi-list toggle-sidebar-btn"></i>
-  </div><!-- End Logo -->
+  </div>
   
 
   <div class="search-bar">
@@ -18,7 +18,7 @@
         <input id="search-input" type="text" name="query" placeholder="Search" title="Enter search keyword">
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
     </form>
-</div><!-- End Search Bar -->
+</div>
 
 
   <nav class="header-nav ms-auto">
@@ -28,12 +28,12 @@
         <a class="nav-link nav-icon search-bar-toggle " href="#">
           <i class="bi bi-search"></i>
         </a>
-      </li><!-- End Search Icon-->
+      </li>
 
       @auth
-      <!-- Display user-related links when the user is logged in -->
+      
       <li class="nav-item dropdown">
-        <!-- ... (other user-related links) ... -->
+        
       </li><!-- End User-related Nav -->
 
       <li class="nav-item dropdown pe-3">

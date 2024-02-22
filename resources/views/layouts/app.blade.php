@@ -152,7 +152,7 @@
   
 
 <style>
-    /* Add this CSS to center the elements and adjust the top margin */
+
     .row {
       display: flex;
       flex-direction: column;
@@ -161,7 +161,7 @@
     }
   
     #question-container {
-      margin-top: 1px; /* Adjust the top margin as needed */
+      margin-top: 1px;
     }
 
     .main {

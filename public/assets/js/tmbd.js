@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let apiUrl = 'https://api.themoviedb.org/3/discover/movie';
   const searchApiUrl = 'https://api.themoviedb.org/3/search/movie';
   const defaultSort = 'popularity.desc'; // Default sort order
-  
+
   const movieList = document.getElementById('movie-list');
   let currentRow = document.createElement('div');
   currentRow.className = 'movie-row';
@@ -18,18 +18,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const loadMovies = async (params) => {
     try {
-      // Clear the movie list before displaying search results
+
       movieList.innerHTML = '';
-      let response = null; // Set response to null
-      let data = null; // Set data to null
+      let response = null;
+      let data = null;
 
       response = await fetch(`${apiUrl}?${new URLSearchParams(params)}`, options);
       data = await response.json();
 
-      
-      
+
+
       data.results.forEach(movie => {
-        if(!movie.poster_path) return;
+        if (!movie.poster_path) return;
         const movieCard = document.createElement('div');
         movieCard.className = 'movie-card';
 
@@ -48,14 +48,14 @@ document.addEventListener('DOMContentLoaded', function () {
         currentRow.appendChild(movieCard);
 
         if (currentRow.children.length >= 7) {
-          // Start a new row after 7 items
+
           movieList.appendChild(currentRow);
           currentRow = document.createElement('div');
           currentRow.className = 'movie-row';
         }
       });
-    
-      // Add any remaining movies in the last row
+
+
       if (currentRow.children.length > 0) {
         movieList.appendChild(currentRow);
       }
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   };
 
-  // Function to load default movies
+
   const loadDefaultMovies = () => {
     const initialParams = {
       api_key: apiKey,
@@ -75,19 +75,19 @@ document.addEventListener('DOMContentLoaded', function () {
     loadMovies(initialParams);
   };
 
-  // Call the function to load default movies when the page loads
+
   loadDefaultMovies();
 
   const searchForm = document.getElementById('search-form');
   const searchInput = document.getElementById('search-input');
- 
+
 
   searchForm.addEventListener('submit', async (event) => {
     event.preventDefault();
     const query = searchInput.value.trim();
     apiUrl = searchApiUrl;
-    
-    
+
+
     if (query) {
       const searchParams = {
         api_key: apiKey,
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
       };
       loadMovies(searchParams);
     } else {
-      // If the search query is empty, you can handle this case or display a message
+
       console.log('Please enter a search query.');
     }
   });

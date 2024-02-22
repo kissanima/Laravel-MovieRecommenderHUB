@@ -21,7 +21,7 @@
   
   <div class="container">
       <div id="movie-list">
-          <!-- Movie rows will be dynamically added here by JavaScript -->
+          
           
       </div>
   </div>

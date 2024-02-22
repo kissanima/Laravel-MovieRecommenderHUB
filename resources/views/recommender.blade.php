@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('style')
-  <!-- Add any additional styles here -->
+ 
 @endsection
 
 @section('content')
@@ -41,7 +41,7 @@
       </div>
 
       <div id="recommendation-container" style="display: none;">
-        <!-- Display recommended movies here -->
+        
       </div>
 
     @else
@@ -55,7 +55,7 @@
 </main><!-- End #main -->
 
   <div id="recommendation-container" style="display: none;">
-    <!-- Display recommended movies here -->
+    
   </div>
 @endsection
 

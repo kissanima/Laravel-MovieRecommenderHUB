@@ -1,4 +1,4 @@
-<!-- ======= Footer ======= -->
+
 <footer id="footer" class="footer">
     <div class="copyright">
       &copy; Copyright <strong><span>MovieRecommenderHUB</span></strong>. All Rights Reserved
@@ -10,4 +10,4 @@
       <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
       Designed by <a href="https://bootstrapmade.com/" style="color:#F8981E">BootstrapMade</a>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
